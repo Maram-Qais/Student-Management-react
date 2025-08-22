@@ -1,12 +1,76 @@
-# React + Vite
+🎓 Student Management React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Role-based React dashboard for Admin, Teacher, and Student users. Fully dynamic with JSON data, protected routing, responsive layout, and theme toggle.
 
-Currently, two official plugins are available:
+🛠 Tech Stack:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React 19.1.1
+Vite (project bundler)
+Tailwind CSS (styling)
+React Router DOM  (routing)
+No backend is used; all data comes from static JSON files.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📂 Project Structure:
+src/
+ ├─ assets/                  # Optional assets (images, icons, animations)
+ ├─ components/             
+ │    ├─ DashboardLayout.jsx    # Main responsive dashboard layout with sidebar and topbar
+ │    ├─ HomeRedirect.jsx       # Redirects root "/" based on user role
+ │    └─ ProtectedRoute.jsx     # Role-based route protection
+ │    ├─ DataTableWrapper.jsx   # Reusable table wrapper for Admin & Teacher
+ │    └─ OverviewPage.jsx       # Reusable overview cards and layout
+ ├─ context/
+ │    ├─ AuthContext.jsx      # Auth state, login/logout
+ │    ├─ AuthProvider.jsx     # Provides AuthContext to app
+ │    ├─ ThemeContext.jsx     # Theme state (light/dark)
+ │    └─ ThemeProvider.jsx    # Provides ThemeContext to app
+ ├─ hooks/
+ │    ├─ useAuth.jsx          # Custom hook for authentication
+ │    └─ useTheme.jsx         # Custom hook for theme
+ ├─ pages/
+ │    ├─ admin/
+ │    │    ├─ Overview.jsx    # Admin dashboard overview
+ │    │    └─ Users.jsx       # Admin user management
+ │    ├─ teacher/
+ │    │    ├─ Overview.jsx    # Teacher dashboard overview
+ │    │    └─ Courses.jsx     # Teacher courses page
+ │    ├─ student/
+ │    │    ├─ Overview.jsx    # Student dashboard overview
+ │    │    └─ StudentCalendar.jsx # Calendar with student events
+ │    ├─ AppRoutes.jsx        # All app routes with protected routes
+ │    ├─ App.jsx              # Main app component
+ │    ├─ Main.jsx             # App entry point
+ │    └─ index.css             # Global styles
+ ├─ data/
+ │    ├─ Users.json           # User data 
+ │    ├─ Courses.json         # Course data (created for dynamic rendering)
+ │    └─ Grades.json          # Grades data (created for dynamic rendering)
+ └─ main.jsx                  # Application bootstrap file
+
+
+
+✨Features
+
+Role-Based Routing: Admin, Teacher, and Student pages are accessible only by authorized users.
+
+Dynamic Data Rendering: Stats, tables, and calendar events are generated from JSON files (Users.json, Courses.json, Grades.json).
+
+Reusable Components: Cards, tables, and dashboard layouts are reusable across different roles.
+
+Theme Support: Light and dark mode supported across all pages.
+
+Responsive Design: Works on desktop and mobile devices.
+
+Student Calendar: Interactive calendar showing events dynamically from grades.
+
+
+⚡Setup Instructions:
+1-Clone the repository
+git clone https://github.com/Maram-Qais/Student-Management-react.git
+cd Student-Management-react
+
+2-Install dependencies
+npm install
+3-Run locally
+npm run dev
