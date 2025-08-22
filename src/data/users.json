@@ -1,0 +1,8 @@
+[
+  { "id": 1, "email": "admin@school.test", "password": "Admin@123", "role": "Admin" },
+  { "id": 2, "email": "teacher@school.test", "password": "Teacher@123", "role": "Teacher" },
+  { "id": 3, "email": "student@school.test", "password": "Student@123", "role": "Student" },
+  { "id": 4, "email": "teacher2@school.test", "password": "Teacher@123", "role": "Teacher" },
+  { "id": 5, "email": "student2@school.test", "password": "Student@123", "role": "Student" },
+  { "id": 6, "email": "student3@school.test", "password": "Student@123", "role": "Student" }
+]
